@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteFabricaController {
 
     @Autowired
-    private Motor motor;//Injeção de dependência
+    private Motor motor;//Injeção de dependência de todo o Bean motor
 
     @PostMapping
     public CarroStatus ligarCarro(@RequestBody Chave chave){
