@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TesteFabricaController {
 
     @Autowired
-    @Qualifier("motorEletrico")
+    @Turbo // Consigo criar uma classe do tipo annotation e substituir o uso do Quilifier
+    //@Qualifier("motorTurbo") Passa qual Bean do tipo carro seve ser injetado, pois temos mais de um Bean do tipo caro
     private Motor motor;//Injeção de dependência de todo o Bean motor
 
     @PostMapping

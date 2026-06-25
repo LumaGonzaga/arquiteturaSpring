@@ -10,14 +10,15 @@ import org.springframework.context.annotation.Primary;
 public class MontadoraConfiguration {
 
     @Bean(name = "motorAspirado")//Registra a instância criada no Container
-    @Primary
+    //@Primary//Se não usar o @Qualifier, usando o @Primary, mostramos qual o Bean primário. Se não indicasse qual o Bean
+    //@Qualifier ou Primary, como temos mais de um Bean do tipo carro, teríamos erro.
     public Motor motorAspirado(){
         var motor = new Motor();
         motor.setCavalos(140);
         motor.setCilindros(4);
         motor.setModelo("XPTO-B1");
         motor.setLitragem(1.5);
-        motor.setTipo(TipoMotor.Turbo);
+        motor.setTipo(TipoMotor.Aspirado);
         return motor;
     }
 
@@ -28,7 +29,7 @@ public class MontadoraConfiguration {
         motor.setCilindros(4);
         motor.setModelo("XPTO-01");
         motor.setLitragem(1.5);
-        motor.setTipo(TipoMotor.Turbo);
+        motor.setTipo(TipoMotor.Eletrico);
         return motor;
     }
 
